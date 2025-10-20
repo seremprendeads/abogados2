@@ -1128,7 +1128,7 @@
 
                 <div class="about-stats">
                     <div class="stat-item">
-                        <div class="stat-number" data-target="500" data-suffix="+">0+</div>
+                        <div class="stat-number" data-target="200" data-suffix="+">0+</div>
                         <div class="stat-label">Casos Exitosos</div>
                     </div>
                     <div class="stat-item">
@@ -1675,9 +1675,9 @@
         });
 
         // STATS COUNTER ANIMATION
-        function animateCounter(element, target, duration = 5000) {
+        function animateCounter(element, target, duration = 8000) {
             const start = 0;
-            const increment = target / (duration / 16) / 2; // 60fps
+            const increment = target / (duration / 16); // 60fps
             let current = start;
             
             const timer = setInterval(() => {
@@ -1714,5 +1714,6 @@
 </body>
 
 </html>
+
 
 
