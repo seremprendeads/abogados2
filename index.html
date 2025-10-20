@@ -1677,7 +1677,7 @@
         // STATS COUNTER ANIMATION
         function animateCounter(element, target, duration = 5000) {
             const start = 0;
-            const increment = target / (duration / 16); // 60fps
+            const increment = target / (duration / 16) / 2; // 60fps
             let current = start;
             
             const timer = setInterval(() => {
@@ -1714,4 +1714,5 @@
 </body>
 
 </html>
+
 
