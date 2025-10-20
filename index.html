@@ -1675,21 +1675,23 @@
         });
 
         // STATS COUNTER ANIMATION
-        function animateCounter(element, target, duration = 8000) {
-            const start = 0;
-            const increment = target / (duration / 16); // 60fps
-            let current = start;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target + (element.dataset.suffix || '');
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current) + (element.dataset.suffix || '');
-                }
-            }, 16);
+       function animateCounter(element, target, duration = 5000) {
+    const start = 0;
+    // 🔸 Reducimos aún más la velocidad dividiendo el incremento
+    const increment = target / (duration / 16) / 5;  // ← podés subir este “5” si querés más lento
+    let current = start;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + (element.dataset.suffix || '');
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + (element.dataset.suffix || '');
         }
+    }, 16);
+}
+
 
         // Observer for stats counter
         const statsObserver = new IntersectionObserver((entries) => {
@@ -1714,6 +1716,7 @@
 </body>
 
 </html>
+
 
 
 
